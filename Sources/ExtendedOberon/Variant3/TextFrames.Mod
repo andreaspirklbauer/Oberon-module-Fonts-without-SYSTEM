@@ -833,7 +833,7 @@ MODULE TextFrames; (*JG 8.10.90 / NW 16.11.2015 / AP 1.10.23 Extended Oberon*)
       IF F.carloc.pos > F.org THEN
         Texts.Delete(F.text, F.carloc.pos - 1, F.carloc.pos, DelBuf); SetCaret(F, F.carloc.pos - 1)
       END
-    ELSIF ch = DEL THEN  (*delete,  delete character to the right of the cursor*)
+    ELSIF ch = DEL THEN  (*delete, delete character to the right of the cursor*)
       IF F.carloc.pos > F.org THEN
         IF F.carloc.pos < F.text.len THEN RemoveCaret(F); SetCaret(F, F.carloc.pos + 1) END ;
         Texts.Delete(F.text, F.carloc.pos - 1, F.carloc.pos, DelBuf); SetCaret(F, F.carloc.pos - 1)
